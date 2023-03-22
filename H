@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Button Example</title>
+
+    <script>
+
+      function calculate() {
+
+        const date = new Date();
+
+        const day = date.getDate();
+
+        const month = date.getMonth() + 1;
+
+        const modResult = day % month;
+
+        let percentResult = modResult * 10;
+
+        let displayText = "";
+
+        if (modResult % 2 === 0) {
+
+          displayText = `+${percentResult}%`;
+
+        } else {
+
+          percentResult *= -1;
+
+          displayText = `${percentResult}%`;
+
+        }
+
+        document.getElementById("result").textContent = displayText;
+
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+  </body>
+
+</html>
+
